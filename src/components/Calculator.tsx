@@ -35,9 +35,8 @@ const Calculator: React.FC = () => {
       setDisplay("0");
       return;
     }
-
+  
     if (label === "+/-") {
-      // Troca o sinal do número no display
       if (display.startsWith("-")) {
         setDisplay(display.slice(1));
       } else {
@@ -45,39 +44,43 @@ const Calculator: React.FC = () => {
       }
       return;
     }
-
+  
     if (label === "%") {
-      // Calcula porcentagem do número atual
       try {
         const num = eval(display.replace(/×/g, "*").replace(/÷/g, "/"));
-        setDisplay((num / 100).toString());
+        const percentage = num / 100;
+        setDisplay(percentage.toFixed(2));
       } catch {
         setDisplay("Erro");
       }
       return;
     }
-
+  
     if (label === "=") {
-      // Quando clicar igual, calcula a expressão
       try {
         const expression = display.replace(/×/g, "*").replace(/÷/g, "/");
-        // Usar eval com cuidado! Aqui é só exemplo simples.
         const result = eval(expression);
-        setDisplay(result.toString());
+  
+        if (typeof result === "number") {
+          // Limita a 2 casas decimais se for número decimal
+          const formatted = Number.isInteger(result) ? result.toString() : result.toFixed(2);
+          setDisplay(formatted);
+        } else {
+          setDisplay(result.toString());
+        }
       } catch {
         setDisplay("Erro");
       }
       return;
     }
-
-    // Se display é zero e não clicou em ponto, substitui o zero
+  
     if (display === "0" && label !== ".") {
       setDisplay(label);
     } else {
       setDisplay(display + label);
     }
   };
-
+  
   return (
     <div className="calculator">
       <div className="screen">
