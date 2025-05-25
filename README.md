@@ -1,54 +1,33 @@
-# React + TypeScript + Vite
+# iPhone-Style Calculator 📱✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Calculadora funcional inspirada no design da calculadora do iPhone, construída com foco em usabilidade, performance e código limpo.
 
-Currently, two official plugins are available:
+## Tecnologias Utilizadas 🛠️
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) 
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+- 🌐 **HTML**  
+- 🎨 **CSS**  
+- ![React](https://img.shields.io/badge/React-61DAFB?style=flat&logo=react&logoColor=black)
+- 🛠️ Ferramentas: Vite (ou Create React App), ESLint, Prettier
 
-## Expanding the ESLint configuration
+## Sobre o Projeto 📖
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Projeto desenvolvido para oferecer uma experiência intuitiva e visualmente fiel ao design do iPhone. A aplicação é responsiva, com interface limpa e de fácil utilização.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+O código é modular, organizado e tipado, facilitando manutenção e futuras expansões.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Funcionalidades 🚀
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Layout inspirado na calculadora do iPhone com botões arredondados e cores suaves  
+- Operações matemáticas básicas: adição, subtração, multiplicação e divisão  
+- Display interativo que atualiza em tempo real conforme as operações são realizadas  
+- Código estruturado para facilitar extensões futuras, como histórico de cálculos, suporte a teclado físico e modo científico  
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Como Rodar o Projeto ▶️
+
+1. Clone o repositório  
+2. Execute `npm install` para instalar as dependências  
+3. Rode `npm run dev` (ou `npm start` dependendo da configuração)  
+4. Acesse `http://localhost:3000` no navegador  
+
